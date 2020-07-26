@@ -35,6 +35,6 @@ public class PyC : MonoBehaviour
         //Path to the Python standard library
         searchPaths.Add(Application.dataPath + @"/Plugins/Lib/");
         engine.SetSearchPaths(searchPaths);
-        engine.ExecuteFile(Application.dataPath + @"/PythonScripts/" + "test");
+        pyL = engine.ExecuteFile(Application.dataPath + @"/PythonScripts/" + "test.py");
     }
 }
