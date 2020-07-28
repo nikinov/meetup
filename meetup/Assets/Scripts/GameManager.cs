@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using IronPython.Hosting;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +25,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         PyC.init();
         PyC pyC = FindObjectOfType<PyC>();
-        //pyC.py = "test.py";
         yield return new WaitForSeconds(1);
-        Debug.Log(pyC.pyL.printS("Kali"));
+        text.text = pyC.pyL.printS("Kali");
     }
+
 }
